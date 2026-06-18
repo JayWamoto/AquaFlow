@@ -39,4 +39,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
         }, 2500);
     }
+
+    // Add activity log updates when the Refresh button is clicked
+if (refreshBtn && logContainer) {
+
+    refreshBtn.addEventListener('click', () => {
+
+        const timestamp = new Date().toLocaleTimeString();
+
+        const newLogEntry = document.createElement('div');
+
+        newLogEntry.className =
+            "list-group-item p-3 border-0 border-bottom text-dark small d-flex justify-content-between align-items-center bg-white";
+
+        newLogEntry.innerHTML = `
+            <span><strong class="text-primary">[INFO]</strong> Data refreshed successfully.</span>
+            <span class="text-muted">${timestamp}</span>
+        `;
+
+        // Add the new message to the top of the list
+        logContainer.insertBefore(newLogEntry, logContainer.firstChild);
+    });
+
+}
+
 });
