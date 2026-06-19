@@ -67,6 +67,67 @@
 
         </main>
 
+<div class="tab-content bg-white p-4 rounded shadow-sm" id="solutionsTabContent">
+
+    <!-- Homes -->
+    <div class="tab-pane fade show active" id="residential" role="tabpanel" aria-labelledby="residential-tab">
+        <div class="row align-items-center">
+            <div class="col-lg-7">
+                <h3 class="fw-bold text-primary">Home Water Monitoring</h3>
+                <p class="text-muted">
+                    Designed for homes and apartments. It tracks water usage,
+                    detects leaks, and helps users save water.
+                </p>
+                <button class="btn btn-outline-primary btn-sm mt-2"
+                    data-bs-toggle="modal"
+                    data-bs-target="#specsModal"
+                    onclick="updateModal('Home Model H-10', '0.05 L/min', '10-Year Battery')">
+                    View Specifications
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Businesses -->
+    <div class="tab-pane fade" id="commercial" role="tabpanel" aria-labelledby="commercial-tab">
+        <div class="row align-items-center">
+            <div class="col-lg-7">
+                <h3 class="fw-bold text-primary">Business Water Monitoring</h3>
+                <p class="text-muted">
+                    Designed for offices, shops, and commercial buildings.
+                    It monitors water use in different areas and helps detect leaks.
+                </p>
+                <button class="btn btn-outline-primary btn-sm mt-2"
+                    data-bs-toggle="modal"
+                    data-bs-target="#specsModal"
+                    onclick="updateModal('Business Model B-50', '0.50 L/min', 'Power Supply with Battery Backup')">
+                    View Specifications
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Farms -->
+    <div class="tab-pane fade" id="agriculture" role="tabpanel" aria-labelledby="agriculture-tab">
+        <div class="row align-items-center">
+            <div class="col-lg-7">
+                <h3 class="fw-bold text-primary">Farm Water Monitoring</h3>
+                <p class="text-muted">
+                    Designed for farms and irrigation systems.
+                    It helps farmers manage water usage and reduce waste.
+                </p>
+                <button class="btn btn-outline-primary btn-sm mt-2"
+                    data-bs-toggle="modal"
+                    data-bs-target="#specsModal"
+                    onclick="updateModal('Farm Model F-90', '2.00 L/min', 'Solar Power')">
+                    View Specifications
+                </button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
         <footer class="bg-dark text-light py-4 border-top border-secondary mt-auto">
             <div class="container text-center text-md-start">
                 <p class="mb-0">&copy; 2026 AquaFlow Systems. All rights reserved.</p>
