@@ -136,5 +136,35 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/main.js"></script>
+
+<div class="modal fade" id="specsModal" tabindex="-1" aria-labelledby="specsModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+
+            <div class="modal-header bg-dark text-white">
+                <h5 class="modal-title" id="specsModalLabel">Device Specifications</h5>
+                <button type="button" class="btn-close btn-close-white"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body">
+                <p><strong>Model:</strong> <span id="modal-model-name">-</span></p>
+                <p><strong>Leak Detection:</strong> <span id="modal-leak-threshold">-</span></p>
+                <p><strong>Battery:</strong> <span id="modal-battery-spec">-</span></p>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script>
+function updateModal(model, threshold, battery) {
+    document.getElementById('modal-model-name').textContent = model;
+    document.getElementById('modal-leak-threshold').textContent = threshold;
+    document.getElementById('modal-battery-spec').textContent = battery;
+}
+</script>
+
 </body>
 </html>
