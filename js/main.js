@@ -63,4 +63,49 @@ if (refreshBtn && logContainer) {
 
 }
 
+// Filter alerts when a category button is clicked
+
+const filterButtons = document.querySelectorAll('#filter-btn-group button');
+const alertItems = document.querySelectorAll('.alert-item');
+
+if (filterButtons.length > 0 && alertItems.length > 0) {
+
+    filterButtons.forEach(button => {
+
+        button.addEventListener('click', () => {
+
+            // Reset all buttons
+            filterButtons.forEach(btn => {
+                btn.classList.remove('btn-primary', 'active');
+                btn.classList.add('btn-outline-primary');
+            });
+
+            // Highlight the selected button
+            button.classList.remove('btn-outline-primary');
+            button.classList.add('btn-primary', 'active');
+
+            const targetFilter = button.getAttribute('data-filter');
+
+            // Show matching cards
+            alertItems.forEach(item => {
+
+                const itemCategory = item.getAttribute('data-category');
+
+                if (
+                    targetFilter === 'all' ||
+                    itemCategory === targetFilter
+                ) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+
+            });
+
+        });
+
+    });
+
+}
+
 });
