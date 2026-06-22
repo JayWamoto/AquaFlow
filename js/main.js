@@ -108,4 +108,48 @@ if (filterButtons.length > 0 && alertItems.length > 0) {
 
 }
 
+// Change prices when the billing option is switched
+
+const billingToggle = document.getElementById('billing-toggle');
+const priceValues = document.querySelectorAll('.price-card-val');
+const annualLabel = document.getElementById('annual-label');
+
+if (billingToggle && priceValues.length > 0) {
+
+    billingToggle.addEventListener('change', () => {
+
+        const isAnnual = billingToggle.checked;
+
+        // Highlight the yearly option when selected
+        if (isAnnual) {
+            if (annualLabel) {
+                annualLabel.classList.replace('text-muted', 'text-success');
+            }
+        } else {
+            if (annualLabel) {
+                annualLabel.classList.replace('text-success', 'text-muted');
+            }
+        }
+
+        // Update plan prices
+        priceValues.forEach(priceNode => {
+
+            const targetRate = isAnnual
+                ? priceNode.getAttribute('data-annual')
+                : priceNode.getAttribute('data-monthly');
+
+            // Simple fade effect
+            priceNode.style.opacity = 0.3;
+
+            setTimeout(() => {
+                priceNode.textContent = targetRate;
+                priceNode.style.opacity = 1;
+            }, 150);
+
+        });
+
+    });
+
+}
+
 });
