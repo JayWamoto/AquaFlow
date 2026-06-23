@@ -152,4 +152,47 @@ if (billingToggle && priceValues.length > 0) {
 
 }
 
+// Open and close all FAQ items
+
+const expandAllBtn = document.getElementById('faq-expand-all');
+const collapseAllBtn = document.getElementById('faq-collapse-all');
+
+const accordionPanels =
+    document.querySelectorAll('#aquaFlowAccordion .accordion-collapse');
+
+const accordionButtons =
+    document.querySelectorAll('#aquaFlowAccordion .accordion-button');
+
+if (expandAllBtn && collapseAllBtn && accordionPanels.length > 0) {
+
+    // Open all FAQ answers
+    expandAllBtn.addEventListener('click', () => {
+
+        accordionPanels.forEach(panel => {
+            panel.classList.add('show');
+        });
+
+        accordionButtons.forEach(button => {
+            button.classList.remove('collapsed');
+            button.setAttribute('aria-expanded', 'true');
+        });
+
+    });
+
+    // Close all FAQ answers
+    collapseAllBtn.addEventListener('click', () => {
+
+        accordionPanels.forEach(panel => {
+            panel.classList.remove('show');
+        });
+
+        accordionButtons.forEach(button => {
+            button.classList.add('collapsed');
+            button.setAttribute('aria-expanded', 'false');
+        });
+
+    });
+
+}
+
 });
