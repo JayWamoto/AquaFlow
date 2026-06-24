@@ -75,7 +75,111 @@
     <!-- Page Content -->
     <main class="content-wrap container my-5" style="max-width: 700px;">
 
-        <!-- Contact form goes here -->
+        <!-- Contact form -->
+
+<div class="bg-white p-4 p-md-5 rounded shadow-sm">
+
+    <h1 class="h2 fw-bold text-dark mb-2">Request a Demo</h1>
+
+    <p class="text-muted mb-4">
+        Fill out the form below and our team will contact you.
+    </p>
+
+    <div id="form-success-alert"
+         class="alert alert-success d-none mb-4"
+         role="alert">
+
+        <h5 class="alert-heading fw-bold">
+            ✓ Request Sent Successfully!
+        </h5>
+
+        <p class="mb-0 small">
+            Thank you for your request. Our team will contact you within 24 hours.
+        </p>
+
+    </div>
+
+    <form id="demo-intake-form" novalidate>
+
+        <!-- Name -->
+        <div class="mb-3">
+            <label for="client-name"
+                   class="form-label fw-semibold">
+                Full Name
+            </label>
+
+            <input type="text"
+                   class="form-control"
+                   id="client-name"
+                   placeholder="Jay wamoto"
+                   required>
+
+            <div class="invalid-feedback">
+                Please enter your name.
+            </div>
+        </div>
+
+        <!-- Email -->
+        <div class="mb-3">
+            <label for="client-email"
+                   class="form-label fw-semibold">
+                Email Address
+            </label>
+
+            <input type="email"
+                   class="form-control"
+                   id="client-email"
+                   placeholder="wamotojay@gmail.com"
+                   required>
+
+            <div class="invalid-feedback">
+                Please enter a valid email address.
+            </div>
+        </div>
+
+        <!-- Plan Type -->
+        <div class="mb-4">
+            <label for="node-scale"
+                   class="form-label fw-semibold">
+                Project Type
+            </label>
+
+            <select class="form-select"
+                    id="node-scale"
+                    required>
+
+                <option value="" selected disabled>
+                    Select an option
+                </option>
+
+                <option value="residential">
+                    Home (1–5 meters)
+                </option>
+
+                <option value="commercial">
+                    Business (6–50 meters)
+                </option>
+
+                <option value="industrial">
+                    Large Facility (50+ meters)
+                </option>
+
+            </select>
+
+            <div class="invalid-feedback">
+                Please select a project type.
+            </div>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit"
+                class="btn btn-primary w-100 py-2 fw-semibold">
+            Submit Request
+        </button>
+
+    </form>
+
+</div>
 
     </main>
 
