@@ -195,4 +195,28 @@ if (expandAllBtn && collapseAllBtn && accordionPanels.length > 0) {
 
 }
 
+const demoForm = document.getElementById('demo-intake-form');
+const successAlertBox = document.getElementById('form-success-alert');
+
+if (demoForm) {
+
+    demoForm.addEventListener('submit', (event) => {
+
+        event.preventDefault();
+
+        if (demoForm.checkValidity()) {
+
+            successAlertBox.classList.remove('d-none');
+            demoForm.reset();
+
+        } else {
+
+            demoForm.classList.add('was-validated');
+
+        }
+
+    });
+
+}
+
 });
