@@ -20,3 +20,13 @@ body {
 .content-wrap {
     flex: 1;
 }
+
+/* Card hover effect */
+.card:hover {
+    transform: translateY(-4px);
+}
+
+/* Smooth price change */
+.price-card-val {
+    transition: opacity 0.15s;
+}
