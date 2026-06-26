@@ -219,4 +219,15 @@ if (demoForm) {
 
 }
 
+const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+const navbar = document.getElementById('navbarNav');
+
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        if (navbar.classList.contains('show')) {
+            new bootstrap.Collapse(navbar).hide();
+        }
+    });
+});
+
 });
